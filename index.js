@@ -1,6 +1,11 @@
-//file.js 
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 5500;
+//index.js
+const express = require('express');
+const app = express(); 
+const path = require('path');
+const port = process.env.PORT || 5500;
 
-app.listen(port);
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.listen(port)
